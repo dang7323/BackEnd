@@ -10,10 +10,11 @@ app = FastAPI(
     redoc_url="/redoc"
 )
 
+origins = ["https://frontend-ljx5.onrender.com"]
 # CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=settings.ALLOWED_ORIGINS,
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
