@@ -5,7 +5,7 @@ router = APIRouter(
     tags=["Health"]
 )
 
-@router.get("")
+@router.head("")
 def health_check():
     return {
         "status": "ok"
