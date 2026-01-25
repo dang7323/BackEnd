@@ -11,16 +11,16 @@ app = FastAPI(
     redoc_url="/redoc"
 )
 # CORS 설정
-# origins = [
-#     "http://localhost:5173",    # 로컬 Vite/React 기본 주소
-#     "http://127.0.0.1:5173",
-#     "https://your-frontend.onrender.com", # 나중에 배포할 프론트엔드 주소도 미리 추가
-# ]
+origins = [
+    "http://localhost:5173",    # 로컬 Vite/React 기본 주소
+    "http://127.0.0.1:5173",
+    "https://frontend-ljx5.onrender.com", # 나중에 배포할 프론트엔드 주소도 미리 추가
+]
 
 # CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=settings.ALLOWED_ORIGINS,
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
